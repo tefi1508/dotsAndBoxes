@@ -5,7 +5,7 @@ Feature: Welcome
 
       Scenario: Mensaje de bienvenida
             Given visito la pagina principal
-            Then deberia ver el mensaje "bienvenido a Dots & Boxes"
+            Then deberia ver el mensaje "Bienvenido a Dots & Boxes"
 
       Scenario: Boton iniciar Juego
             Given visito la pagina principal
