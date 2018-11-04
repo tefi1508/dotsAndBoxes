@@ -59,3 +59,19 @@ table td {
 .welcomeBnt {
     width: 35%;
 }
+
+.topSelected {
+    border-top: 4px solid black;
+}
+
+.leftSelected {
+    border-left: 4px solid black;
+}
+
+.rightSelected {
+    border-right: 4px solid black;
+}
+
+.downSelected {
+    border-bottom: 4px solid black;
+}

@@ -6,7 +6,10 @@
                   <tr>
                         <% for i in 0..(@matSize.to_i - 1) do %>
                                <td>
-                                                              
+                                    <button class="up" onclick = "changeColor(this.parentNode,'topSelected')"> ⇡  </button> 
+                                    <button class="left" onclick = "changeColor(this.parentNode,'leftSelected')"> ⇠ </button>
+                                    <button class="right" onclick = "changeColor(this.parentNode,'rightSelected')"> ⇢ </button>
+                                    <button class="down" onclick = "changeColor(this.parentNode,'downSelected')"> ⇣ </button>                          
                                </td>
                         <% end %>
                   </tr>
