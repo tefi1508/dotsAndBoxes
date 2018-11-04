@@ -15,9 +15,9 @@ class App < Sinatra::Base
     end
 
     #GameView
-    post '/StartGame' do
-        @matSize = params[:matSize]
-        #@matSize = 5.to_i 
+    post '/startGame' do
+        #@matSize = params[:matSize]
+        @matSize = 5.to_i 
         erb:gameView
     end
 

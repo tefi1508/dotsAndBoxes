@@ -4,7 +4,7 @@
 
 .mainContainer {
     width: 70%;
-    height: 80%;
+    height: auto;
     margin-top: 5%;
     margin-left: 15%;
     box-shadow: 0 0 15px 0 gray;
@@ -26,9 +26,10 @@
 }
 
 table {
-    width: 60%;
+    width: 100%;
     text-align: center;
     height: 60%;
+    padding: 0.2em;
 }
 
 tr {
@@ -36,11 +37,23 @@ tr {
     padding: 15px;
 }
 
+td div {
+    display: block;
+}
+
 table td {
-    border: 2px solid #e1e1e1;
     background-color: #F2F2F2;
-    margin: 15px;
     padding: 15px;
+    border: 1px solid gray;
+    justify-content: center;
+    align-content: center;
+}
+
+.boardcontainer {
+    padding: 10px;
+    width: inherit;
+    box-shadow: 0 0 15px 0 gray;
+    border-radius: 10px;
 }
 
 .welcomeBnt {
