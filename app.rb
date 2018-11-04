@@ -1,4 +1,6 @@
 require 'sinatra'
+require './lib/test'
+
 
 class App < Sinatra::Base 
 
@@ -9,7 +11,14 @@ class App < Sinatra::Base
 
     #Initial Configuration
     post '/initialConfig' do
-        "Configuracion inicial"
+        erb:initialConfiguration
+    end
+
+    #GameView
+    post '/startGame' do
+        #@matSize = params[:matSize]
+        @matSize = 5.to_i 
+        erb:gameView
     end
 
     run! if app_file == $0

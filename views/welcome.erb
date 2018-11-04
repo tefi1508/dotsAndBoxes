@@ -1,5 +1,14 @@
-Bienvenido a Dots & Boxes
-<form method="post" action="/initialConfig">
-<br>
-<input type ='submit' value='Iniciar Juego'>
-</form>
+<!-- Asi se enlazan partials-->
+<%= erb(:head) %>
+
+<div class="container center">
+
+    <h1>Bienvenido a Dots & Boxes</h1>
+      <hr>
+      <form method="post" action="/initialConfig" class="mainForm"><br>
+
+      <input type ="submit" value="Iniciar Juego" class="btn btn-primary welcomeBnt">
+
+      </form>
+
+</div>
