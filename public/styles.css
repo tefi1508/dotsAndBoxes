@@ -1,0 +1,48 @@
+* {
+    height: auto;
+}
+
+.mainContainer {
+    width: 70%;
+    height: 80%;
+    margin-top: 5%;
+    margin-left: 15%;
+    box-shadow: 0 0 15px 0 gray;
+}
+
+.container {
+    width: inherit;
+    height: inherit;
+}
+
+.center {
+    text-align: center;
+}
+
+.mainForm {
+    width: auto;
+    height: auto;
+    margin-top: 20%;
+}
+
+table {
+    width: 60%;
+    text-align: center;
+    height: 60%;
+}
+
+tr {
+    margin: 15px;
+    padding: 15px;
+}
+
+table td {
+    border: 2px solid #e1e1e1;
+    background-color: #F2F2F2;
+    margin: 15px;
+    padding: 15px;
+}
+
+.welcomeBnt {
+    width: 35%;
+}

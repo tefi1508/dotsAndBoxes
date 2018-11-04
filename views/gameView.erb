@@ -1,0 +1,24 @@
+<%= erb(:head) %>
+<h3> tamaño de tablero <%= @matSize %> x <%= @matSize %> </h3>
+
+      <table class="board" >
+            <tbody>
+            <% for i in 0..(@matSize.to_i - 1) do %>
+                  <tr>
+                        <% for i in 0..(@matSize.to_i - 1) do %>
+                               <td>X</td>
+                        <% end %>
+                  </tr>
+            <% end %>
+            </tbody>
+      </table>
+
+
+      
+     
+
+
+
+
+
+
