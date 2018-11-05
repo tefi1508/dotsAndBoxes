@@ -10,12 +10,12 @@ class App < Sinatra::Base
     end
 
     #Initial Configuration
-    post '/initialConfig' do
+    get '/initialConfig' do
         erb:initialConfiguration
     end
 
     #GameView
-    post '/startGame' do
+    get '/startGame' do
         #@matSize = params[:matSize]
         @matSize = 5.to_i 
         erb:gameView
