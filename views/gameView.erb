@@ -1,20 +1,21 @@
 <%= erb(:head) %>
+
+<h1 id="score" class="right-align">0</h1>
+
 <div class="boardContainer">
-      <table class="board" >
-            <tbody>
+      <table id="board" >
             <% for i in 0..(@matSize.to_i - 1) do %>
                   <tr>
                         <% for i in 0..(@matSize.to_i - 1) do %>
-                               <td>
-                                    <button class="up" onclick = "changeColor(this.parentNode,'topSelected')"> ⇡  </button> 
-                                    <button class="left" onclick = "changeColor(this.parentNode,'leftSelected')"> ⇠ </button>
-                                    <button class="right" onclick = "changeColor(this.parentNode,'rightSelected')"> ⇢ </button>
-                                    <button class="down" onclick = "changeColor(this.parentNode,'downSelected')"> ⇣ </button>                          
-                               </td>
+                              <td>
+                                    <button class="up" onclick = "selectBorder(this,'topSelected')"> ⇡  </button> 
+                                    <button class="left" onclick = "selectBorder(this,'leftSelected')"> ⇠ </button>
+                                    <button class="right" onclick = "selectBorder(this,'rightSelected')"> ⇢ </button>
+                                    <button class="down" onclick = "selectBorder(this,'downSelected')"> ⇣ </button>                          
+                              </td>
                         <% end %>
                   </tr>
             <% end %>
-            </tbody>
       </table>
 </div>
 

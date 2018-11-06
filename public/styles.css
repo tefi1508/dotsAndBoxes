@@ -75,3 +75,11 @@ table td {
 .downSelected {
     border-bottom: 4px solid black;
 }
+
+.right-align{
+    float: right;
+}
+
+.hidden{
+    display: none;
+}
