@@ -23,7 +23,8 @@ function selectBorder(btn, direction) {
 }
 
 function disableButton(btn){
-    btn.disabled = true;
+    //btn.disabled = true;
+    btn.classList.add("hidden");
 }
 
 function disableNeighbors(td, direction){
@@ -64,7 +65,8 @@ function disableNeighbors(td, direction){
             //or mark cell side
         case "rightSelected":
             firstCellOfNextRow = id_downNeighbor - (BOARD_SIZE - 1);
-            if(id_rightNeighbor != firstCellOfNextRow){
+            //id_rightNeighbor === firstCellOfNextRow
+            if(!(idValue % BOARD_SIZE === 0)){
                 rightNeighbor = document.getElementById(id_rightNeighbor.toString());
                 disableRightNeighbor(rightNeighbor);
                 verify(rightNeighbor);
@@ -74,30 +76,23 @@ function disableNeighbors(td, direction){
 }
 
 function disableUpNeighbor(neighbor){
-    neighbor.childNodes[7].disabled = true;
+    neighbor.childNodes[7].classList.add("hidden");
     neighbor.classList.add("downSelected");
 }
 
 function disableDownNeighbor(neighbor){
-    neighbor.childNodes[1].disabled = true;
+    neighbor.childNodes[1].classList.add("hidden");
     neighbor.classList.add("topSelected");
 }
 
 function disableRightNeighbor(neighbor){
-    neighbor.childNodes[3].disabled = true;
+    neighbor.childNodes[3].classList.add("hidden");
     neighbor.classList.add("leftSelected");
 }
 
 function disableLeftNeighbor(neighbor){
-    neighbor.childNodes[5].disabled = true;
+    neighbor.childNodes[5].classList.add("hidden");
     neighbor.classList.add("rightSelected");
-}
-
-function hideCellButtons(td){
-    td.childNodes[1].classList.add("hidden");
-    td.childNodes[3].classList.add("hidden");
-    td.childNodes[5].classList.add("hidden");
-    td.childNodes[7].classList.add("hidden");
 }
 
 function verify(td) {
@@ -106,7 +101,6 @@ function verify(td) {
         current_score = parseInt(SCORE.innerHTML);
         current_score += 1;
         SCORE.innerHTML = current_score.toString();
-        hideCellButtons(td);
         td.innerHTML = "X";
     } else {
         console.log('no');
