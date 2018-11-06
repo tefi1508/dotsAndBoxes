@@ -26,10 +26,13 @@
 }
 
 table {
-    width: 100%;
+    width: 95%;
     text-align: center;
     height: 60%;
     padding: 0.2em;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    margin-bottom: 2.5%;
 }
 
 tr {
@@ -37,16 +40,17 @@ tr {
     padding: 15px;
 }
 
-td div {
-    display: block;
-}
-
 table td {
     background-color: #F2F2F2;
     padding: 15px;
     border: 1px solid gray;
-    justify-content: center;
-    align-content: center;
+}
+
+td > button {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: center;
 }
 
 .boardcontainer {
@@ -74,4 +78,12 @@ table td {
 
 .downSelected {
     border-bottom: 4px solid black;
+}
+
+.right-align{
+    float: right;
+}
+
+.hidden{
+    display: none;
 }
