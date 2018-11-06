@@ -40,24 +40,34 @@ function disableNeighbors(td, direction){
             if(id_upNeighbor > 0 ){
                 upNeighbor = document.getElementById(id_upNeighbor.toString());
                 disableUpNeighbor(upNeighbor);
+                verify(upNeighbor);
             }        
             break;
         case "downSelected":
             if(id_downNeighbor < number_of_cells){
                 downNeighbor = document.getElementById(id_downNeighbor.toString());
                 disableDownNeighbor(downNeighbor);
+                verify(downNeighbor);
             }
             break;
         case "leftSelected":
             if(!(id_leftNeighbor%BOARD_SIZE === 0)){
                 leftNeighbor = document.getElementById(id_leftNeighbor.toString());
                 disableLeftNeighbor(leftNeighbor);
+                verify(leftNeighbor);
             }
             break;
+            //FIX!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            //when using === works but marks next row first cell
+
+            //when using ! validates next row first cell, but on other cells wont disable neighbor button 
+            //or mark cell side
         case "rightSelected":
-            if(!(id_rightNeighbor != (id_downNeighbor - (BOARD_SIZE - 1)))){
+            firstCellOfNextRow = id_downNeighbor - (BOARD_SIZE - 1);
+            if(id_rightNeighbor != firstCellOfNextRow){
                 rightNeighbor = document.getElementById(id_rightNeighbor.toString());
                 disableRightNeighbor(rightNeighbor);
+                verify(rightNeighbor);
             }
             break;
     }
@@ -83,12 +93,21 @@ function disableLeftNeighbor(neighbor){
     neighbor.classList.add("rightSelected");
 }
 
+function hideCellButtons(td){
+    td.childNodes[1].classList.add("hidden");
+    td.childNodes[3].classList.add("hidden");
+    td.childNodes[5].classList.add("hidden");
+    td.childNodes[7].classList.add("hidden");
+}
+
 function verify(td) {
     let st = window.getComputedStyle(td).getPropertyValue('border-color');
     if (st === 'rgb(0, 0, 0)') {
         current_score = parseInt(SCORE.innerHTML);
         current_score += 1;
         SCORE.innerHTML = current_score.toString();
+        hideCellButtons(td);
+        td.innerHTML = "X";
     } else {
         console.log('no');
     }
