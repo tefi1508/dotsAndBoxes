@@ -1,6 +1,4 @@
 require 'sinatra'
-require './lib/test'
-
 
 class App < Sinatra::Base 
 
