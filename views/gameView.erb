@@ -1,6 +1,11 @@
 <%= erb(:head) %>
-<h1 class="titleGameview"> Titulo</h1>
+<h1 class="titleGameview"> Partida</h1>
 <div class="right-align">
+
+      <form method="get" action="/initialConfig">
+            <button class="btn btn-danger">Abandonar Partida</button>
+      </form>
+
       <h2 id="score"> Score </h2><hr>
       <h4 class="currentTurn" id="player1"><%= @player1.name %> : <%= @player1.score %></h4><br>
       <h4 id="player2"><%= @player2.name %> : <%= @player2.score %></h4><hr>
