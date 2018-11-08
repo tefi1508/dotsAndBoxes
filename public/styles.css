@@ -1,7 +1,3 @@
-* {
-    height: auto;
-}
-
 .mainContainer {
     width: 70%;
     height: auto;
@@ -13,6 +9,7 @@
 .container {
     width: inherit;
     height: inherit;
+    margin-top: 10%;
 }
 
 .center {
@@ -27,12 +24,8 @@
 
 table {
     width: 95%;
-    text-align: center;
-    height: 60%;
-    padding: 0.2em;
-    margin-left: 2.5%;
-    margin-right: 2.5%;
-    margin-bottom: 2.5%;
+    height: 95%;
+    margin: 2.5%;
 }
 
 tr {
@@ -44,13 +37,14 @@ table td {
     background-color: #F2F2F2;
     padding: 15px;
     border: 1px solid gray;
+    text-align: center;
 }
 
-td > button {
+td>button {
     display: inline-block;
     width: 20px;
     height: 20px;
-    vertical-align: center;
+    vertical-align: middle;
 }
 
 .boardcontainer {
@@ -58,6 +52,8 @@ td > button {
     width: inherit;
     box-shadow: 0 0 15px 0 gray;
     border-radius: 10px;
+    margin: 2%;
+    margin-bottom: 0%;
 }
 
 .welcomeBnt {
@@ -80,10 +76,31 @@ td > button {
     border-bottom: 4px solid black;
 }
 
-.right-align{
+.right-align {
     float: right;
 }
 
-.hidden{
+.hidden {
     display: none;
+}
+
+.currentTurn {
+    background-color: #87CEFA;
+    border: 1px solid black;
+    opacity: 0.9;
+    border-radius: 10px;
+    padding: 0.2em;
+}
+
+.titleGameview {
+    width: 70%;
+    margin-left: 2%;
+    text-align: center;
+}
+
+.right-align {
+    height: 105%;
+    margin-top: 1%;
+    text-align: center;
+    width: 25%;
 }
