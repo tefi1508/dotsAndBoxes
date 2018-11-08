@@ -1,9 +1,9 @@
 <%= erb(:head) %>
 <h1 class="titleGameview"> Titulo</h1>
 <div class="right-align">
-      <h2 > Score </h2><hr>
-      <h4 class="currentTurn"><%= @player1.name %> : <%= @player1.score %></h4><br>
-      <h4 ><%= @player2.name %> : <%= @player2.score %></h4><hr>
+      <h2 id="score"> Score </h2><hr>
+      <h4 class="currentTurn" id="player1"><%= @player1.name %> : <%= @player1.score %></h4><br>
+      <h4 id="player2"><%= @player2.name %> : <%= @player2.score %></h4><hr>
 
        <h1 id="score" class="right-align">0</h1> <!-- Corregir score con cada jugador -->
 </div>
