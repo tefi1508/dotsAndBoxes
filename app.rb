@@ -1,4 +1,5 @@
 require 'sinatra'
+require './lib/player'
 
 class App < Sinatra::Base 
 
@@ -16,6 +17,10 @@ class App < Sinatra::Base
     get '/startGame' do
         #@matSize = params[:matSize]
         @matSize = 5.to_i 
+        @player1 =  Player.new()
+        @player1.init("Jugador 1","Black","X")
+        @player2 =  Player.new()
+        @player2.init("Jugador 2","Black","O")
         erb:gameView
     end
 
