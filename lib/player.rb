@@ -1,7 +1,7 @@
 class Player
       attr_accessor :name, :color, :score, :mark
 
-      def init(name, color, mark,score)
+      def init(name, color, mark, score)
             @score = score
             @name = name
             @color = color
@@ -12,4 +12,7 @@ class Player
             @score = @score + 1
       end
 
+      def setScore(new_score)
+            @score = new_score;
+      end
 end

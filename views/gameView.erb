@@ -1,16 +1,11 @@
 <%= erb(:head) %>
 <h1 class="titleGameview"> Partida</h1>
 <div class="right-align">
-
-      <form method="get" action="/initialConfig">
-            <button class="btn btn-danger">Abandonar Partida</button>
-      </form>
-
-      <h2 id="score"> Score </h2><hr>
-      <h4 class="currentTurn" id="player1"><%= @player1.name %> : <%= @player1.score %></h4><br>
-      <h4 id="player2"><%= @player2.name %> : <%= @player2.score %></h4><hr>
-
-       <h1 id="score" class="right-align">0</h1> <!-- Corregir score con cada jugador -->
+      <h2 id="score">  </h2><hr>
+      <h4 class="players currentTurn"><%= @player1.name  %> : </h4> <br>
+      <h4 class="scoreOfplayer">0</h4>
+      <h4 class="players"><%= @player2.name %> : </h4><hr>
+      <h4 class="scoreOfplayer">0</h4>
 </div>
 
 <div class="boardContainer">
