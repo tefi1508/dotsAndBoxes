@@ -4,6 +4,6 @@ Feature: Abandone Game
       Para ya no deseo jugar
 
       Scenario: Boton Abandonar Partida
-            Given visito la pagina de juego
-            When presiono el boton "Abandonar Partida"
+            Given estoy en la pagina de juego
+            When oprimo el boton "Abandonar Partida"
             Then deberia aparecer la pagina de configuracion inicial
