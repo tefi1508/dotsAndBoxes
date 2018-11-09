@@ -2,6 +2,11 @@ BOARD = document.getElementById("board");
 BOARD_SIZE = BOARD.rows.length;
 ROWS = BOARD.rows;
 SCORE = document.getElementById("score");
+PLAYERS = document.getElementsByClassName("players");
+SCORES = document.getElementsByClassName("scoreOfPlayer");
+NUMBER_OF_PLAYERS = PLAYERS.length;
+CURRENT_PLAYER = 1;
+
 
 function addId() {
     let idOfCell = 1;
@@ -14,6 +19,48 @@ function addId() {
     }
 }
 
+function addIdToPlayers(){
+    let idOfPlayer = 1;
+    const player ="player";
+    for (let index = 0; index < NUMBER_OF_PLAYERS; index++) {
+        PLAYERS[index].id = player + idOfPlayer;
+        idOfPlayer++;
+    }
+}
+
+function addIdToScores(id_player){
+    let idOfScore = 1;
+    const scoreOfPlayer ="scoreOfPlayer";
+    for (let index = 0; index < NUMBER_OF_PLAYERS; index++) {
+        SCORES[index].id = scoreOfPlayer + idOfScore;
+        idOfScore++;
+    } 
+}
+
+function switchTurn(){
+    let player = "player";
+    let new_player;
+    document.getElementById(player+CURRENT_PLAYER).classList.remove("currentTurn");
+    if(CURRENT_PLAYER < NUMBER_OF_PLAYERS){
+        CURRENT_PLAYER = CURRENT_PLAYER+1;
+        new_player = player+CURRENT_PLAYER;
+        document.getElementById(new_player).classList.add("currentTurn");
+    } else {
+        CURRENT_PLAYER = 1;
+        new_player = player+CURRENT_PLAYER;
+        document.getElementById(new_player).classList.add("currentTurn");
+    }
+}
+
+function updateCurrentPlayerScore(){
+    let scoreOfPlayer = "scoreOfPlayer";
+    let element = document.getElementById(scoreOfPlayer+CURRENT_PLAYER);
+    let score = parseInt(element.innerHTML);
+    score++;
+    element.innerHTML = score.toString();
+}
+
+
 function selectBorder(btn, direction) {
     td = btn.parentNode;
     td.classList.add(direction);
@@ -24,6 +71,7 @@ function selectBorder(btn, direction) {
 
 function disableButton(btn) {
     btn.classList.add("hidden");
+    switchTurn();
 }
 
 function disableNeighbors(td, direction) {
@@ -89,14 +137,39 @@ function disableLeftNeighbor(neighbor) {
     neighbor.classList.add("rightSelected");
 }
 
+function verifyIfGameEnded(){
+    let scoreOfPlayer = "scoreOfPlayer";
+    let total_score = 0;
+    const number_of_cells = Math.pow(BOARD_SIZE, 2);
+    for (let i = 0; i < PLAYERS.length; i++) {
+        let element = document.getElementById(scoreOfPlayer+(i+1));
+        let element_value = parseInt(element.innerHTML);
+        total_score += element_value;
+    }
+    if(total_score === number_of_cells){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+function showWinner(){
+    let winner = document.getElementById("score");
+    let current_player = document.getElementById("player"+CURRENT_PLAYER);
+    winner.innerHTML = "YOU WIN!" + current_player.innerHTML;
+}
+
 function verify(td) {
     let st = window.getComputedStyle(td).getPropertyValue('border-color');
     if (st === 'rgb(0, 0, 0)') {
-        current_score = parseInt(SCORE.innerHTML);
-        current_score += 1;
-        SCORE.innerHTML = current_score.toString();
+        updateCurrentPlayerScore();
         td.innerHTML = "X";
+        if(verifyIfGameEnded()){
+            showWinner();
+        }
     }
 }
 
 addId();
+addIdToPlayers();
+addIdToScores();
