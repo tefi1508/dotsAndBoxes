@@ -154,9 +154,14 @@ function verifyIfGameEnded(){
 }
 
 function showWinner(){
-    let winner = document.getElementById("score");
-    let current_player = document.getElementById("player"+CURRENT_PLAYER);
-    winner.innerHTML = "YOU WIN!" + current_player.innerHTML;
+    const result = document.getElementById("score");
+    const player1 = document.getElementById("scoreOfPlayer1");
+    const player2 = document.getElementById("scoreOfPlayer2");
+    if(parseInt(player1.innerHTML) > parseInt(player2.innerHTML)){
+        result.innerHTML = "GANASTE! Jugador 1";
+    } else {
+        result.innerHTML = "GANASTE! Jugador 2";
+    }
 }
 
 function verify(td) {
