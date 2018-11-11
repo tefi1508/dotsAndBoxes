@@ -1,4 +1,7 @@
 <%= erb(:head) %>
+<form method="get" action="/startGame">
+      <button class="btn btn-danger" style="float:right;">Reiniciar</button>
+</form>
 <h1 class="titleGameview"> Partida</h1>
 <div class="right-align">
       <h2 id="Score"> Score </h2><hr>
@@ -10,6 +13,7 @@
       <form method="get" action="/initialConfig">
             <button class="btn btn-danger">Abandonar Partida</button>
       </form>
+      
 </div>
 
 <div class="boardContainer">
